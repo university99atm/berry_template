@@ -1,12 +1,8 @@
-import { use } from 'react';
+import { useContext } from 'react';
 import { ConfigContext } from 'contexts/ConfigContext';
 
-// ==============================|| CONFIG - HOOKS ||============================== //
+// ==============================|| CONFIG - HOOKS  ||============================== //
 
-export default function useConfig() {
-  const context = use(ConfigContext);
+const useConfig = () => useContext(ConfigContext);
 
-  if (!context) throw new Error('useSConfig must be use inside ConfigProvider');
-
-  return context;
-}
+export default useConfig;
